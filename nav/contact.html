@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* nav more */
+        nav {
+            display: flex;
+            background-color: black;
+            width: 100%;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            border-radius: 50px;
+
+        }
+
+        nav a {
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            padding: 20px;
+            font-family: sans-serif;
+            font-size: 17px;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            background-color: aquamarine;
+            color: black;
+        }
+
+        nav .btn:hover {
+            background-color: aquamarine;
+            color: black;
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            border: none;
+            font-size: 17px;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+
+        .hide {
+            display: none;
+            position: absolute;
+        }
+
+        .hide>a {
+            display: block;
+        }
+
+        .more:hover>.hide {
+            display: block;
+        }
+
+        /* nav more-1  */
+        .hide-1 {
+            display: none;
+            position: absolute;
+        }
+        
+        .more-1:hover > .hide-1{
+            display: inline-block;
+        }
+
+        .hide-1 > a {
+            display: block;
+        }
+
+
+        /* visited  */
+        .visit:visited {
+            background-color: aquamarine;
+            color: black;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <br>
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="visit">Conatact</a>
+        <div class="more">
+            <button class="btn">Services</button>
+            <div class="hide">
+                <a href="#">Heet Sir</a>
+                <div class="more-1">
+                    <button class="btn">Manan Sir</button>
+                    <div class="hide-1">
+                        <a href="#">Hiren Sharma</a>
+                        <a href="#">Bharat Mali</a>
+                        <a href="#">Ramkrushna</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Welcome to Contact Page</h1>
+</body>
+
+</html>

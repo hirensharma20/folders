@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .mainparent {
+        background-image: url(gta-img/login.jpg);
+        background-size: cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .parent {
+        background-color: rgba(0, 0, 0, 0.832);
+        border-radius: 10px;
+        width: fit-content;
+        height: fit-content;
+        padding: 50px;
+        text-align-last: left;
+        color: white;
+    }
+</style>
+<body>
+    <div class="mainparent">
+        <div class="parent">
+            <form onsubmit="return submitForm()">
+                <table cellspacing="10px">
+                    <tr>
+                        <th>
+                            <label for="fn">First Name</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="firstname" id="fn" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="firstname-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="ln">Last Name</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="lastname" id="ln" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="lastname-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="dob">Dob</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="dob" id="dob" type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="dob-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="mail">Email</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="email" id="mail" type="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="email-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="pass1">New password</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="pass1" id="pass1" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="password-error1" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="pass2">Confirm password</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="pass2" id="pass2" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="password-error2" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td colspan="2">
+                            <button style="background-color: blue; padding: 10px; color: white; border: none; border-radius: 5px;" type="submit">Sign in</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>

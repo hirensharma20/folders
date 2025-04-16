@@ -1,0 +1,182 @@
+.container {
+    background-color: antiquewhite;
+}
+
+.mainparent {
+    border-top: blue 3px solid;
+    border-bottom: blue 3px solid;
+}
+
+.nav-icon1 {
+    height: 50px;
+    width: 80px;
+    position: relative;
+    top: 10px;
+    left: 682px;
+}
+
+.nav-btn {
+    position: relative;
+    top: 0px;
+    left: 700px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 0px 0px 30px 30px;
+    padding: 15px;
+    width: 300px;
+}
+
+.nav1 {
+    display: flex;
+}
+
+.logo {
+    height: 100px;
+}
+
+.nav1-a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.whatsapp,
+.volume {
+    height: 20px;
+    width: 15px;
+}
+
+.down-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.icons {
+    height: 30px;
+    width: 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.lang-btn {
+    background-color: white;
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 15px;
+    border: blue 1px solid;
+    color: blue;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.btn-search {
+    height: fit-content;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.search {
+    height: fit-content;
+    width: 180px;
+    margin-top: 18px;
+    background-color: aquamarine;
+    border: 1px solid blue;
+    margin-left: 20px;
+    padding: 10px;
+    margin-top: 50px;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.nav3 {
+    background-color: blue;
+    height: 60px;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    width: 160px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+    flex-direction: column;
+    background-color: blue;
+    position: absolute;
+    top: 50px;
+    padding-left: 5px;
+}
+
+.nav3-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.nav3-a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home {
+    background-color: yellow;
+}
+
+.rounded-pill {
+    height: 400px;
+    width: 1190px;
+    background-color: blue;
+    margin-top: 50px;
+}
+
+.child1 {
+    position: relative;
+    top: 0;
+    left: -12px;
+    background-color: darkblue;
+    border: black;
+    height: 400px;
+    width: 400px;
+    border-radius: 500px 0px 0px 500px;
+}
+
+.slide-parent {
+    position: relative;
+    top: -450px;
+    left: 396px;
+    height: fit-content;
+    width: 900px;
+}
+
+.d-block {
+    height: 380px;
+    width: 900px;
+    border: white solid 1px;
+    border-radius: 200px 200px 200px 200px;
+}
+
+.vertical-line {
+    height: 400px;
+    box-shadow: 10px;
+    position: relative;
+    top: -418px;
+    right: 10px;
+    border:rgba(0, 0, 255, 0.453) 1px solid;
+    box-shadow: -5px 0px 10px 5px rgba(0, 0, 255, 0.477);
+    float: inline-end;
+}

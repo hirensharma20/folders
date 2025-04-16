@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Calculator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .parent {
+        width: fit-content;
+        background-color: black;
+        color: white;
+        padding: 100px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+
+    .div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 20px;
+    }
+
+    input {
+        /* border: none; */
+        background-color: black;
+        border-color: blue;
+        color: white;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        border: none;
+    }
+
+</style>
+<script>
+    function calculate(operation) {
+        var num1 = parseFloat(document.getElementById('num1').value);
+        var num2 = parseFloat(document.getElementById('num2').value);
+        var result;
+
+        switch (operation) {
+            case 'addition':
+                result = num1 + num2;
+                break;
+            case 'subtraction':
+                result = num1 - num2;
+                break;
+            case 'multiplication':
+                result = num1 * num2;
+                break;
+            case 'division':
+                if (num2 !== 0) {
+                    result = num1 / num2;
+                } else {
+                    result = 'Cannot divide by zero.';
+                }
+                break;
+            case 'percentage':
+                result = (num1 * num2) / 100;
+                break;
+            default:
+                result = 'Invalid operation';
+        }
+
+        document.getElementById('result').innerHTML = 'Result: ' + result;
+    }
+</script>
+<body>
+
+    <div class="parent">
+
+        <div class="entervalue">
+            <label id="value1" for="num1">Value 1:</label>
+            <input type="number" id="num1" step="any">
+        
+            <br><br><br>
+        
+            <label id="value2" for="num2">Value 2:</label>
+            <input type="number" id="num2" step="any">
+    
+        </div>
+
+       
+        <br>
+        <br>
+        <br>
+         <div class="div">
+            <button onclick="calculate('addition')">Addition</button>
+            <button onclick="calculate('subtraction')">Subtraction</button>
+            <button onclick="calculate('multiplication')">Multiplication</button>
+            <button onclick="calculate('division')">Division</button>
+            <button onclick="calculate('percentage')">Percentage</button>
+         </div>
+       
+
+        <br><br><br>
+    
+        <div id="result"></div>
+    
+    </div>  
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Slider</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap");
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    main h1,
+    main h3 {
+        text-align: center;
+    }
+
+    .slider-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .slider-screen {
+        width: 350px;
+        aspect-ratio: 1;
+    }
+
+    .slider-container {
+        display: flex;
+        height: 100%;
+        gap: 35px;
+        transition: all .3s ease;
+    }
+
+    .slider-wrapper .slides {
+
+        flex: 1 0 100%;
+        transition: scale .3s ease;
+    }
+
+    .slider-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+
+    .button {
+        display: inline-flex;
+        width: 40px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(0, 154, 154);
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <main>
+        <div class="slider-wrapper">
+            <div class="slider-screen">
+                <div class="slider-container">
+                    <div class="slides" style="background-color: skyblue"></div>
+                    <div class="slides" style="background-color: red"></div>
+                    <div class="slides" style="background-color: blue"></div>
+                    <div class="slides" style="background-color: pink"></div>
+                    <div class="slides" style="background-color: chartreuse"></div>
+                    <div class="slides" style="background-color: blueviolet"></div>
+                    <div class="slides" style="background-color: bisque"></div>
+                    <div class="slides" style="background-color: black"></div>
+                </div>
+            </div>
+        </div>
+        <div class="slider-button">
+            <span class="button left" id="prev"><i class="fa-solid fa-chevron-left"></i></span>
+            <span class="button right" id="next"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+    </main>
+
+    <script>
+        let sliderat = 0
+
+        const sliderrr = document.querySelector('.slider-container')
+        const prevbtn = document.getElementById('prev')
+        const nextbtn = document.getElementById('next')
+
+        function moveSlider() {
+            sliderrr.style.transform = translateX(-${ sliderat * 100} %);
+        }
+
+        prevbtn.addEventListener('click', () => {
+            if (sliderat == 0) return;
+            --sliderat
+            moveSlider()
+        })
+
+        nextbtn.addEventListener('click', () => {
+            if (sliderat == 8) return;
+            ++sliderat
+            moveSlider()
+        })
+    </script>
+</body>
+
+</html>

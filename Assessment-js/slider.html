@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #slider {
+            display: flex;
+            overflow: hidden;
+            width: 200px;
+        }
+
+        #thumbnails {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .thumbnail {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .img {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="slider">
+        <img src="food-img/food1.jpg">
+        <img src="food-img/food2.jpg">
+        <img src="food-img/food3.jpg">
+        <img src="food-img/food4.jpg">
+        <img src="food-img/food5.jpg">
+        <img src="food-img/food6.jpg">
+        <img src="food-img/food7.jpg">
+        <img src="food-img/food8.jpg">
+        <img src="food-img/food9.jpg">
+        <img src="food-img/food10.jpg">
+    </div>
+    <div id="thumbnails">
+        <button onclick="changeSlide(-1)"> < </button>
+        <img class="img" src="food-img/food1.jpg">
+        <img class="img" src="food-img/food2.jpg">
+        <img class="img" src="food-img/food3.jpg">
+        <img class="img" src="food-img/food4.jpg">
+        <img class="img" src="food-img/food5.jpg">
+        <img class="img" src="food-img/food6.jpg">
+        <img class="img" src="food-img/food7.jpg">
+        <img class="img" src="food-img/food8.jpg">
+        <img class="img" src="food-img/food9.jpg">
+        <img class="img" src="food-img/food10.jpg">
+        <button onclick="changeSlide(1)">></button>
+    </div>
+
+    <script>
+        // Function to create a new slide
+        function createSlide(imageSrc) {
+            const slide = document.createElement('div');
+            slide.className = 'slide';
+            slide.style.backgroundImage = url(${imageSrc});
+            slide.style.width = '100%';
+            return slide;
+        }
+
+        // Function to handle thumbnail click
+        function handleThumbnailClick(imageSrc) {
+            const selectedSlide = createSlide(imageSrc);
+            document.getElementById('slider').innerHTML = ''; // Clear existing slides
+            document.getElementById('slider').appendChild(selectedSlide);
+        }
+
+        // Function to handle next/previous button click
+        function changeSlide(offset) {
+            const currentSlideIndex = images.indexOf(document.getElementById('slider').style.backgroundImage.slice(5, -2));
+            const nextIndex = (currentSlideIndex + offset + images.length) % images.length;
+            const nextImageSrc = images[nextIndex];
+
+            const selectedSlide = createSlide(nextImageSrc);
+            document.getElementById('slider').innerHTML = '';
+            document.getElementById('slider').appendChild(selectedSlide);
+        }
+
+        // Function to create a thumbnail
+        function createThumbnail(imageSrc) {
+            const thumbnail = document.createElement('div');
+            thumbnail.className = 'thumbnail';
+            thumbnail.style.backgroundImage = url(${imageSrc});
+            thumbnail.addEventListener('click', () => handleThumbnailClick(imageSrc));
+            return thumbnail;
+        }
+
+        // Sample images
+        const images = [
+            'food-img/food1.jpg',
+            'food-img/food2.jpg',
+            'food-img/food3.jpg',
+            'food-img/food4.jpg',
+            'food-img/food5.jpg',
+            'food-img/food6.jpg',
+            'food-img/food7.jpg',
+            'food-img/food8.jpg',
+            'food-img/food9.jpg',
+            'food-img/food10.jpg',
+        ];
+
+        // Create slides from images
+        const slider = document.getElementById('slider');
+        images.forEach(imageSrc => {
+            const slide = createSlide(imageSrc);
+            slider.appendChild(slide);
+        });
+
+        // Create thumbnails from images
+        const thumbnails = document.getElementById('thumbnails');
+        images.forEach(imageSrc => {
+            const thumbnail = createThumbnail(imageSrc);
+            thumbnails.appendChild(thumbnail);
+        });
+    </script>
+
+</body>
+
+</html>

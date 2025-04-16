@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW</title>
+</head>
+<style>
+    .parent {
+        background-color: aqua;
+        width: fit-content;
+        padding: 50px;
+        font-size: xx-large;
+    }
+
+    .pass {
+        padding: 10px;
+        border: 1px solid antiquewhite;
+        font-size: large;
+    }
+
+    .check {
+        height: 20px;
+        width: 20px;
+    }
+</style>
+<body>
+    <div class="parent">
+        <label>Password</label>
+        <input class="pass" type="password" value="Hiren@123" name="" id="hide">
+        <br>
+        <input class="check" type="checkbox" name="" onclick="show()">Show password
+    </div>
+
+    <script>
+        function show() {
+            var a = document.getElementById("hide");
+            if (a.type === "password") {
+                a.type = "text";
+            }
+            else {
+                a.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

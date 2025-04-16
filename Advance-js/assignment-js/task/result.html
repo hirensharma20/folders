@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESULT</title>
+</head>
+<style>
+    div {
+        border: black solid 2px;
+        width: fit-content;
+        padding: 20px;
+    }
+
+    #total {
+        border: none;
+        width: 20px;
+        color: blue;
+    }
+
+    #per {
+        width: 20px;
+        border: none;
+        color: blue;
+    }
+</style>
+
+<body>
+    <div>
+        <center>
+            <h3>Marksheet for Information Technology</h3>
+            <p>Enter Marks</p>
+            <table cellspacing="20">
+                <tr>
+                    <td>1.C Language</td>
+                    <td><input type="text" placeholder="34" id="one"></td>
+                </tr>
+                <tr>
+                    <td>2.C++ Language</td>
+                    <td><input type="text" placeholder="44" id="two"></td>
+                </tr>
+                <tr>
+                    <td>3.Database</td>
+                    <td><input type="text" placeholder="22" id="three"></td>
+                </tr>
+                <tr>
+                    <td>4.HTML</td>
+                    <td><input type="text" placeholder="33" id="four"></td>
+                </tr>
+                <tr>
+                    <td>5.CSS</td>
+                    <td><input type="text" placeholder="45" id="five"></td>
+                </tr>
+                <tr>
+                    <td>6.php</td>
+                    <td><input type="text" placeholder="44" id="six"></td>
+                </tr>
+                <tr>
+                    <td>7.Core java</td>
+                    <td><input type="text" placeholder="50" id="seven"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick="result()">Result</button></td>
+                </tr>
+                <tr>
+                    <td>Total:<input type="text" id="total">/350</td>
+                    <td>Percentage:<input id="per" type="text">%</td>
+                </tr>
+            </table>
+        </center>
+    </div>
+
+    <script>
+        let one = document.getElementById("one");
+        let two = document.getElementById("two");
+        let three = document.getElementById("three");
+        let four = document.getElementById("four");
+        let five = document.getElementById("five");
+        let six = document.getElementById("six");
+        let seven = document.getElementById("seven");
+
+        function result() {
+            let total = Number(one.value) + Number(two.value) + Number(three.value) + Number(four.value) + Number(five.value) + Number(six.value) + Number(seven.value);
+            document.getElementById("total").value = total;
+        }
+
+        function per() {
+            let Per = Number (total.value) % Number (per.value)
+        }
+
+    </script>
+</body>
+
+</html>

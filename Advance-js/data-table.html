@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <table border="1" id="table"></table>
+
+    <script>
+      fetch("https://jsonplaceholder.typicode.com/comments")
+        .then((response) => response.json())
+        .then((data) => {
+          showall(data);
+        })
+        .catch((err) => console.log(err));
+
+      function showall(mydata) {
+        var html = document.getElementById("table");
+        for (Object of mydata) {
+          html.innerHTML += `<tr>
+      <td>${Object.id}</td>
+         <td>${Object.name}</td>
+         <td>${Object.email}</td>
+         </tr>
+      `;
+        }
+        insertAdjacentHTML(html);
+      }
+    </script>
+  </body>
+</html>

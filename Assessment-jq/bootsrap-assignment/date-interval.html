@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Interval</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    #result {
+        background-color: blue;
+        color: white;
+        width: 300px;
+        height: 300px;
+        padding: 10px;
+
+    }
+</style>
+<body>
+    <div class="container mt-5">
+        <div class="date-interval">
+            <form id="dateForm">
+                <table class="table">
+                    <tr>
+                        <td colspan="3">
+                            <h1>Date Interval</h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="date1">From</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input type="date" name="date" id="date1" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="date2">To</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input type="date" name="date2" id="date2" class="form-control">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td colspan="2">
+                            <button type="button" class="btn btn-primary" id="calculateBtn">Calculate</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="ans-div mt-3">
+            <div id="result">
+               
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("#calculateBtn").click(function () {
+                var fromDate = new Date($("#date1").val());
+                var toDate = new Date($("#date2").val());
+
+                var timeDiff = Math.abs(toDate.getTime() - fromDate.getTime());
+                var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+                var years = Math.floor(daysDiff / 365);
+                var months = Math.floor((daysDiff % 365) / 30);
+                var weeks = Math.floor((daysDiff % 365) / 7);
+
+                $("#result").html("Date interval between " + $("#date1").val() + " and " + $("#date2").val() + "<hr>" +
+                    "<br>Years: " + years + "<br>" + " Months: " + months + "<br>" + " Weeks: " + weeks + "<br>" + " Days: " + daysDiff);
+            });
+        });
+    </script>
+</body>
+
+</html>

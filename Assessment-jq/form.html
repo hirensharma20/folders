@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regitration form</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .mainparent {
+        display: flex;
+        justify-content: center;
+    }
+
+    .parent {
+        border: 1px solid antiquewhite;
+        background-color: antiquewhite;
+        width: fit-content;
+        padding: 50px;
+        text-align: left;
+    }
+
+    input,
+    textarea {
+        border: none;
+        margin-left: 10px;
+        margin-top: 10px;
+        background-color: aliceblue;
+    }
+
+
+    button {
+        border: none;
+        color: white;
+        background-color: forestgreen;
+        padding: 5px;
+    }
+
+    select {
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+</style>
+<script>
+    function submitForm() {
+        var firstName = document.getElementById("firstName").value;
+        var lastName = document.getElementById("lastName").value;
+        var email = document.getElementById("email").value;
+        var mobile = document.getElementById("mobile").value;
+        var gender = document.querySelector('input[name="gender"]:checked');
+        var dob = document.getElementById("dob").value;
+        var address = document.getElementById("address").value;
+        var city = document.getElementById("city").value;
+        var pin = document.getElementById("pin").value;
+        var state = document.getElementById("state").value;
+        var qualification = document.getElementById("qualification").value;
+        var password = document.getElementById("password").value;
+
+        if (firstName === "") {
+            alert("Please enter your first name");
+            return false;
+        } else if (lastName === "") {
+            alert("Please enter your last name");
+            return false;
+        } else if (email === "") {
+            alert("Please enter your email");
+            return false;
+        } else if (mobile === "") {
+            alert("Please enter your mobile number");
+            return false;
+        } else if (!gender) {
+            alert("Please choose your gender: Male or Female");
+            return false;
+        } else if (dob === "") {
+            alert("Please select your date of birth");
+            return false;
+        } else if (address === "") {
+            alert("Please enter your address");
+            return false;
+        } else if (city === "") {
+            alert("Please enter your city");
+            return false;
+        } else if (pin === "") {
+            alert("Please enter your pincode");
+            return false;
+        } else if (state === "") {
+            alert("Please enter your state");
+            return false;
+        } else if (qualification === "") {
+            alert("Please select your qualification");
+            return false;
+        } else if (password === "") {
+            alert("Please enter your password");
+            return false;
+        } else {
+            alert("Your form was successfully submitted");
+            return true;
+        }
+    }
+</script>
+<body>
+    <div class="mainparent">
+        <div class="parent">
+            <form >
+                <table>
+                    <tr>
+                        <th><label for="firstName">FirstName</label></th>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="firstName" name="firstName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Last Name </th>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="lastName" name="lastName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email </th>
+                        <td>:</td>
+                        <td>
+                            <input type="email" id="email" name="Email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Mobile </th>
+                        <td>:</td>
+                        <td>
+                            <input type="number" id="mobile" name="Mobile">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <tr>
+                        <th>Gender</th>
+                        <td>:</td>
+                        <td>
+                            <input type="radio" name="gender" value="Male"> Male
+                            <input type="radio" name="gender" value="Female"> Female
+                        </td>
+                    </tr>
+
+                    </td>
+                    </tr>
+                    <tr>
+                        <th>Date of Birth</th>
+                        <td>:</td>
+                        <td>
+                            <input type="date" id="dob" name="Dateofbirth">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>:</td>
+                        <td>
+                            <textarea cols="20" rows="5" id="address" name="Address"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>City</th>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="city" name="City">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Area PIN</th>
+                        <td>:</td>
+                        <td>
+                            <input type="number" id="pin" name="pincode">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>State</th>
+                        <td>:</td>
+                        <td>
+                            <input type="text" id="state" name="State">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                    <tr>
+                        <th><label for="qualification">Qualification</label></th>
+                        <td>:</td>
+                        <td>
+                            <select id="qualification" name="qualification">
+                                <option value="" disabled selected>Select qualification</option>
+                                <option>IT</option>
+                                <option>B Tech</option>
+                                <option>M Tech</option>
+                                <option>Diploma</option>
+                                <option>Bca</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    </td>
+                    </tr>
+                    <tr>
+                        <th>Specialization</th>
+                        <td>:</td>
+                        <td>
+                            <input type="checkbox" id="specialization" name="Specialization">Computer Science
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>:</td>
+                        <td>
+                            <input type="checkbox" id="checkbox" name="Checkbox">Information Technologoly
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>:</td>
+                        <td>
+                            <input type="checkbox">Computer Architecture
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>:</td>
+                        <td>
+                            <input type="checkbox">Tele Communication
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Password</td>
+                        <td>:</td>
+                        <td>
+                            <input type="password" id="password" name="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><button onclick="submitForm()">Registered</button></th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

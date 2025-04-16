@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainparent">
+        <div class="parent">
+            <form onsubmit="return submitForm()" method="post" action="/submit-create-account">
+                <table>
+                    <tr>
+                        <th>
+                            <label for="fn">First Name</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="firstname" id="fn" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="firstname-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="ln">Last Name</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="lastname" id="ln" type="text">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="lastname-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="dob">Dob</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="dob" id="dob" type="date">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="dob-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="mail">Email</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="email" id="mail" type="email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="email-error" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="pass1">New password</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="pass1" id="pass1" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="password-error1" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <label for="pass2">Confirm password</label>
+                        </th>
+                        <td>:</td>
+                        <td>
+                            <input name="pass2" id="pass2" type="password">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <div id="password-error2" class="error-message"></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td colspan="2">
+                            <button type="submit">Sign in</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+    <script>
+        function submitForm() {
+            var firstname = document.getElementById("fn").value;
+            var lastname = document.getElementById("ln").value;
+            var dob = document.getElementById("dob").value;
+            var email = document.getElementById("mail").value;
+            var pass1 = document.getElementById("pass1").value;
+            var pass2 = document.getElementById("pass2").value;
+            var firstnameErrorElement = document.getElementById("firstname-error");
+            var lastnameErrorElement = document.getElementById("lastname-error");
+            var dobErrorElement = document.getElementById("dob-error");
+            var emailErrorElement = document.getElementById("email-error");
+            var password1ErrorElement = document.getElementById("password-error1");
+            var password2ErrorElement = document.getElementById("password-error2");
+
+            firstnameErrorElement.textContent = "";
+            lastnameErrorElement.textContent = "";
+            dobErrorElement.textContent = "";
+            emailErrorElement.textContent = "";
+            password1ErrorElement.textContent = "";
+            password2ErrorElement.textContent = "";
+
+            if (firstname === "") {
+                firstnameErrorElement.textContent = "Enter your first name";
+                return false;
+            } else if (lastname === "") {
+                lastnameErrorElement.textContent = "Enter your last name";
+                return false;
+            } else if (dob === "") {
+                dobErrorElement.textContent = "Enter your date of birth";
+                return false;
+            } else if (email === "") {
+                emailErrorElement.textContent = "Enter your email";
+                return false;
+            } else if (pass1 === "") {
+                password1ErrorElement.textContent = "Enter your password";
+                return false;
+            } else if (pass2 !== pass1) {
+                password2ErrorElement.textContent = "Your password does not match the new password";
+                return false;
+            } else {
+                window.location.href = "log in.html";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

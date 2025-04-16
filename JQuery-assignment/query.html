@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 20px;
+        color: red;
+    }
+
+    ul {
+        list-style: none;
+    }
+    span{
+        display: block;
+    }
+
+    div {
+        width: 700px;
+    }
+</style>
+
+<body>
+    body (Great-Great-Grandparent)
+            <div>div (Great-Grandparent)
+                <ul> ul (Grandparent)
+                    <li>li (direct parent)
+                        <span>
+                            span
+                        </span>
+                    </li>
+                </ul>
+            </div>
+    <script>
+        $(document).ready(function () {
+            $("span").css({ 'border': '2px solid lightgray', 'color': 'lightgray' })
+            $("span").parents().css('border', '2px solid red');
+        })
+    </script>
+</body>
+
+</html>

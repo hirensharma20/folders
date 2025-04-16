@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainparent {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.error-message {
+    color: red;
+    margin-top: 5px;
+}
+
+.parent {
+    background-color: antiquewhite;
+    height: fit-content;
+    font-size: large;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    font-size: large;
+    margin-top: 20px;
+}
+
+label {
+    padding-top: 20px;
+}
+
+#mail,
+#pass,
+input {
+    background-color: antiquewhite;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 30px black 1px;
+    outline: none;
+    font-size: large;
+    padding-top: 20px;
+}
+

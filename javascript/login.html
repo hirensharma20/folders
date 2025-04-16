@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div class="reg-form">
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="mail" name="Email">
+
+            <br>
+            <br>
+
+            <label for="password">Password</label>
+            <input type="password" id="pass" name="password">
+
+            <br>
+            <br>
+
+            <button onclick="login()">Login</button>
+        </form>
+    </div>
+    <script>
+        var Email = document.getElementById("mail").value;
+        var password = document.getElementById("pass").value;
+
+        function login() {
+            if (Email=="") {
+                alert("enter your email")
+                return false
+            }
+            else if (password=="") {
+                alert("enter your password")
+                return false
+            }
+            else {
+                alert("login successfully")
+                return true
+            }
+        }  
+    </script>
+</body>
+</html>
